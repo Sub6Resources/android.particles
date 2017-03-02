@@ -17,9 +17,28 @@ public class Particle {
 	public static final int STATE_ALIVE = 0;	// particle is alive
 	public static final int STATE_DEAD = 1;		// particle is dead
 	
-	public static final int DEFAULT_LIFETIME 	= 200;	// play with this
-	public static final int MAX_DIMENSION		= 5;	// the maximum width or height
-	public static final int MAX_SPEED			= 10;	// maximum speed (per update)
+	public static int DEFAULT_LIFETIME 	= 200;	// play with this
+	public static int MAX_DIMENSION		= 25;	// the maximum width or height
+	public static int MAX_SPEED			= 30;	// maximum speed
+
+	public void setDefaultLifetime(int DEFAULT_LIFETIME) {
+		this.DEFAULT_LIFETIME = DEFAULT_LIFETIME;
+	}
+	public int getDefaultLifetime() {
+		return this.DEFAULT_LIFETIME;
+	}
+	public void setMaxDimension(int MAX_DIMENSION) {
+		this.MAX_DIMENSION = MAX_DIMENSION;
+	}
+	public int getMaxDimension() {
+		return this.MAX_DIMENSION;
+	}
+	public void setMaxSpeed(int MAX_SPEED) {
+		this.MAX_SPEED = MAX_SPEED;
+	}
+	public int getMaxSpeed() {
+		return this.MAX_SPEED;
+	}
 	
 	private int state;			// particle is alive or dead
 	private float widht;		// width of the particle
@@ -123,6 +142,7 @@ public class Particle {
 	public Particle(int x, int y) {
 		this.x = x;
 		this.y = y;
+		//TODO particle changer
 		this.state = Particle.STATE_ALIVE;
 		this.widht = rndInt(1, MAX_DIMENSION);
 		this.height = this.widht;
